@@ -1,28 +1,39 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import Table from './Table';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    render() {
+        const characters = [{
+                'name': 'Charlie',
+                'job': 'Janitor'
+            },
+            {
+                'name': 'Mac',
+                'job': 'Bouncer'
+            },
+            {
+                'name': 'Dee',
+                'job': 'Aspring actress'
+            },
+            {
+                'name': 'Dennis',
+                'job': 'Bartender'
+            }];
+
+            
+// pass the data through to the child component (Table) with properties,
+// kind of how you might pass data through using data- attributes. 
+// We can call the property whatever we want, as long as it’s not a reserved keyword,
+// so I’ll go with characterData.
+
+// The data I’m passing through is the characters variable,
+// and I’ll put curly braces around it as it’s a JavaScript expression.
+        return (
+            <div className="container">
+                <Table characterData = {characters}/>
+            </div>
+        );
+    }
 }
 
 export default App;
